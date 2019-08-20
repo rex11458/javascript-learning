@@ -1,5 +1,5 @@
 # JavaScript基础
-------
+
 ### 值与类型
 ``` js
 number,string,object,null,undefiend,symbol
@@ -148,21 +148,37 @@ console.log(bar.b) // Hello World
 console.log(bar.a) // 42 <--事件委托给foo
 ```
 ### 旧与新
-##### &nbsp;&nbsp;polyfilling
+
+##### &nbsp;&nbsp;transpiling
 <span style="font-size:12px;line-height:16px">
-单 词"<a href="https://remysharp.com/2010/10/08/ what-is-a-polyfill">polyfill</a>"是 由 Remy Sharp 发 明 的 一 个 新 术 语，用于表示根据新特性的定义，创建一段与之行为等价但能够在旧的 JavaScript 环境中运行的代码.
-<a href="https:// github.com/es-shims/es5-shim">ES5-Shim</a>、<a href="https://github.com/es-shims/es6-shim">ES6-Shim</a>
+    语言中新增的语法是无法进行 polyfilling 的。新语法在旧版 JavaScript 引擎上会抛出未识别 /
+无效错误。 因此，更好的方法是，通过工具将新版代码转换为等价的旧版代码。这个过程通常被称为
+“transpiling”。它是由 transforming(转换)和 compiling(编译)组合而成的术语。
 </span>
 ```js
-  if (!Number.isNaN) {
-         Number.isNaN = function isNaN(x) {
-             return x !== x;
-         };
+// ES6
+function foo(a = 2) {
+    console.log( a );
 }
+      foo();      // 2
+      foo( 42 );  // 42
+// transpiler 是如何改变这段代码，从而让其能够在旧环境下运行的呢?    
+function foo() {
+    var a = arguments[0] !== (void 0) ? arguments[0] : 2;
+    console.log( a );
+}  
+```
+### 宿主对象
+```js
+// DOM API
+var el = document.getElementById( "foo" );
+// 输入 / 输出 (I/O)
+alert(..) 
+console.log(..)
 ```
 
 # JavaScript进阶
-------
+
  * 作用域和闭包：你知道 JavaScript 的词法作用域是基于编译器(而非解释器!)语义的吗? 你能解释词法作用域和作为值的函数这两者的直接结果之一就是闭包吗?  
 <br>
 * this 和对象原型：你能复述 this 绑定的四条基本原则吗?你是否还在用 JavaScript 的 “伪”类应付了事，而没有采用更简洁的“行为委托”设计模式?你听说过连接到其他
