@@ -39,9 +39,9 @@ foo(); // 因为foo()而运行
 function foo() {
     a = 3;
     console.log( a ); // 3
+    var a; // 声明是“被提升的”
+    // 到foo()的顶端 
 }
-var a; // 声明是“被提升的”
-// 到foo()的顶端 
 console.log( a ); // 2
 ```
 ```js
