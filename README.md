@@ -148,26 +148,6 @@ console.log(bar.b) // Hello World
 console.log(bar.a) // 42 <--事件委托给foo
 ```
 ### 旧与新
-
-##### &nbsp;&nbsp;transpiling
-<span style="font-size:12px;line-height:16px">
-    语言中新增的语法是无法进行 polyfilling 的。新语法在旧版 JavaScript 引擎上会抛出未识别 /
-无效错误。 因此，更好的方法是，通过工具将新版代码转换为等价的旧版代码。这个过程通常被称为
-“transpiling”。它是由 transforming(转换)和 compiling(编译)组合而成的术语。
-</span>
-```js
-// ES6
-function foo(a = 2) {
-    console.log( a );
-}
-      foo();      // 2
-      foo( 42 );  // 42
-// transpiler 是如何改变这段代码，从而让其能够在旧环境下运行的呢?    
-function foo() {
-    var a = arguments[0] !== (void 0) ? arguments[0] : 2;
-    console.log( a );
-}  
-```
 ### 宿主对象
 ```js
 // DOM API
