@@ -187,18 +187,6 @@ var el = document.getElementById( "foo" );
 alert(..) 
 console.log(..)
 ```
-# JavaScript进阶
-------
- * 作用域和闭包：你知道 JavaScript 的词法作用域是基于编译器(而非解释器!)语义的吗? 你能解释词法作用域和作为值的函数这两者的直接结果之一就是闭包吗?  
-<br>
-* this 和对象原型：你能复述 this 绑定的四条基本原则吗?你是否还在用 JavaScript 的 “伪”类应付了事，而没有采用更简洁的“行为委托”设计模式?你听说过连接到其他
-对象的对象(objects linked to other objects，OLOO)吗?
-<br>
-* 类型和语法：你了解 JavaScript 中的内置类型吗?更重要的是，你了解如何正确安全地使
-用类型间强制转换吗?对于 JavaScript 语法 / 句法中的微妙细节，你的熟悉程度又如何?
-<br>
-* 异步和性能：你还在使用回调管理异步吗?你能解释 promise 是什么以及它为什么 / 如 何能够解决“回调地狱”这个问题吗?你知道如何应用生成器来使得异步代码更加清晰
-吗?对 JavaScript 程序和具体运算的深度优化到底由哪些方面构成?
 
 ### 作用域和闭包
 ### this和对象原型
@@ -207,5 +195,4 @@ console.log(..)
 ### ES6新特性
 <span style="font-size:12px;line-height:16px">
 解构、默认参数值、符号、简洁方法、计算属性、箭头函数、块作用域、promise、生成器、迭代器、模块、代理、Weakmap...
-
 </span>
