@@ -79,3 +79,4 @@ Teacher.prototype.greeting = function () {
 };
 
 var teacher1 = new Teacher('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing'], [1, 2, 3]);
+
