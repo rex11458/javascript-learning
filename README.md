@@ -160,33 +160,19 @@ console.log(bar.a) // 42 <--事件委托给foo
          };
 }
 ```
-##### &nbsp;&nbsp;transpiling
-<span style="font-size:12px;line-height:16px">
-    语言中新增的语法是无法进行 polyfilling 的。新语法在旧版 JavaScript 引擎上会抛出未识别 /
-无效错误。 因此，更好的方法是，通过工具将新版代码转换为等价的旧版代码。这个过程通常被称为
-“transpiling”。它是由 transforming(转换)和 compiling(编译)组合而成的术语。
-</span>
-```js
-// ES6
-function foo(a = 2) {
-    console.log( a );
-}
-      foo();      // 2
-      foo( 42 );  // 42
-// transpiler 是如何改变这段代码，从而让其能够在旧环境下运行的呢?    
-function foo() {
-    var a = arguments[0] !== (void 0) ? arguments[0] : 2;
-    console.log( a );
-}  
-```
-### 宿主对象
-```js
-// DOM API
-var el = document.getElementById( "foo" );
-// 输入 / 输出 (I/O)
-alert(..) 
-console.log(..)
-```
+
+# JavaScript进阶
+------
+ * 作用域和闭包：你知道 JavaScript 的词法作用域是基于编译器(而非解释器!)语义的吗? 你能解释词法作用域和作为值的函数这两者的直接结果之一就是闭包吗?  
+<br>
+* this 和对象原型：你能复述 this 绑定的四条基本原则吗?你是否还在用 JavaScript 的 “伪”类应付了事，而没有采用更简洁的“行为委托”设计模式?你听说过连接到其他
+对象的对象(objects linked to other objects，OLOO)吗?
+<br>
+* 类型和语法：你了解 JavaScript 中的内置类型吗?更重要的是，你了解如何正确安全地使
+用类型间强制转换吗?对于 JavaScript 语法 / 句法中的微妙细节，你的熟悉程度又如何?
+<br>
+* 异步和性能：你还在使用回调管理异步吗?你能解释 promise 是什么以及它为什么 / 如 何能够解决“回调地狱”这个问题吗?你知道如何应用生成器来使得异步代码更加清晰
+吗?对 JavaScript 程序和具体运算的深度优化到底由哪些方面构成?
 
 ### 作用域和闭包
 ### this和对象原型
