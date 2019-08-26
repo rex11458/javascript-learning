@@ -199,3 +199,14 @@ var p = Promise.resolve(21)
 // console.log(it.next().value)
 // console.log(it.next().value)
 
+Promise.resolve().then(
+    function () {
+        console.log('A')
+        throw new Error('error')
+    }
+).catch(function (err) {
+    console.log(err.toString())
+    return 'C'
+}).then(function (value) {
+    console.log(value)
+})
